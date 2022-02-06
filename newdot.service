@@ -1,0 +1,11 @@
+[Unit]
+Description=NewDotService
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/myshake/NewDot/serialClient_final.py /dev/ttyS0 > /home/myshake/NewDot/log.txt 2>&1
+
+[Install]
+WantedBy=multi-user.target
+
