@@ -6,7 +6,8 @@ Set up wifi and ssh in Raspberry Pi without monitor and keyboard: https://desert
 
 Step 2: Install pip3 and packages
 
-If your OS does not have python3 installed, then run "sudo apt install python3 -y";
+Raspberry OS has python3 isntalled by default. If your OS does not have python3 installed, then first run "sudo apt install python3 -y".
+
 ```
   sudo apt update
   sudo apt install python3-pip -y
