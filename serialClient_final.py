@@ -141,7 +141,7 @@ if __name__ == '__main__':
         macEth = mac_address()
     else:
         has_serial = False
-        macEth = 'unit.name'
+        macEth = mac_address()
     fs = 100
     print("My ethernet MAC is: ", macEth)
     print(f'open browser with user/password:guest/sensorweb_guest to see waveform at grafana: \n\thttps://www.sensorweb.us:3000/d/VgfUaF3Gz/bdotv2-plot?orgId=1&var-mac1={macEth}&from=now-1m&to=now&refresh=5s')
@@ -177,6 +177,8 @@ if __name__ == '__main__':
             if has_serial:
                 data_tmp = ser.read(count)
                 data_buf.extend(data_tmp)
+            else:
+               data_buf = [10, 20, 30, 20]*int(fs/4) # np.random.randint(10, 200, size=fs)  
 
 
         #end_timestamp = datetime.datetime.now().timestamp()
