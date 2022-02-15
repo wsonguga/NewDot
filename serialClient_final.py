@@ -19,7 +19,7 @@ def mac_address():
    macEth = "unit.name"
    data = netifaces.interfaces()
    for i in data:
-      if i == 'eth0': #'en0': # 'eth0':
+      if i == 'wlan0': #'en0': # 'eth0':
          interface = netifaces.ifaddresses(i)
          info = interface[netifaces.AF_LINK]
          if info:
