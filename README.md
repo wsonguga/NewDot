@@ -40,3 +40,12 @@ sudo python3 serialClient_final.py /dev/ttyS0
   sudo ./setup_service.sh
 ```
 
+In case the serial port or the digitizer is unstable (which should be fixed), an alternatively way of service is to setup a cronjob running at boot and check every 5 minutes:
+```
+  crontab -e
+```  
+Then append the following lines in cronjobs:
+```
+  */5 * * * * /home/pi/NewDot/run.sh
+  @reboot /home/pi/NewDot/run.sh
+```
