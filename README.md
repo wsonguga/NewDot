@@ -16,6 +16,11 @@ Raspberry OS has python3 isntalled by default. If your OS does not have python3 
   sudo pip3 install netifaces
 ```
 
+Verify time sync works with ntp by checking
+```
+  ntpq -p
+```
+
 With Raspberry Pi 0 W, if the serial port is not enabled by default (/dev/ttyS0 does not exist), then run
 ```
   sudo raspi-config
