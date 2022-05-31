@@ -3,6 +3,9 @@
 **Step 1: Install Raspberry Pi image and enable wifi and ssh**
 
 Set up wifi and ssh in Raspberry Pi without monitor and keyboard: https://desertbot.io/blog/headless-raspberry-pi-4-ssh-wifi-setup
+For Pi 3: https://desertbot.io/blog/headless-raspberry-pi-3-bplus-ssh-wifi-setup
+
+Remember the OS should be 64-bit with no desktop. 
 
 **Step 2: Install pip3, ntp and packages**
 
@@ -31,7 +34,14 @@ Choose "3. Interface Options" -> "Serial Port" -> enable
   sudo raspi-config
 ```
 
-Now, /dev/ttyS0 should appear. Test this command and you should see the data in the displayed Grafana URL by the code:
+Now, /dev/ttyS0 should appear. MAKE SURE you have modified the default setting of serial port, this can be finished by the command below:
+```
+sudo vim /boot/cmdline.txt
+```
+Then, delete the stuff like "console=serial0, 115200", and reboot.
+
+
+Now you are good to test the foloowing command, and you should see the data in the displayed Grafana URL by the code:
 
 ```
 sudo python3 serialClient_final.py /dev/ttyS0
