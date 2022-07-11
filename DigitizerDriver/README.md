@@ -1,6 +1,6 @@
 # NewDot
 
-**Step 1: Install Raspberry Pi image and enable wifi and ssh**
+**Step 1: Install Raspberry Pi image and enable wifi and ssh **
 
 Set up wifi and ssh in Raspberry Pi without monitor and keyboard: https://desertbot.io/blog/headless-raspberry-pi-4-ssh-wifi-setup
 
@@ -42,6 +42,7 @@ sudo python3 serialClient_final.py /dev/ttyS0
 ```
   sudo apt install git
   git clone https://github.com/wsonguga/NewDot.git
+  cd NewDot/DigitizerDriver
   sudo ./setup_service.sh
 ```
 
@@ -51,6 +52,6 @@ In case the serial port or the digitizer is unstable (which should be fixed), an
 ```  
 Then append the following lines in cronjobs:
 ```
-  */5 * * * * /home/pi/NewDot/run.sh
-  @reboot /home/pi/NewDot/run.sh
+  */5 * * * * /home/pi/NewDot/DigitizerDriver/run.sh
+  @reboot /home/pi/NewDot/DigitizerDriver/run.sh
 ```
