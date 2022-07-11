@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=/home/pi/NewDot/run.sh 2>&1
+ExecStart=/home/pi/NewDot/DigitizerDriver/run.sh 2>&1
 
 [Install]
 WantedBy=multi-user.target
